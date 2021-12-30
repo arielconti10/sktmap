@@ -1,0 +1,11 @@
+{
+  "expo": {
+    "name": "sktnew",
+    "slug": "sktnew",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  },
+  "name": "sktnew"
+}
