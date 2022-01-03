@@ -1,3 +1,6 @@
+#import <Firebase.h>
+#import <GoogleMaps/GoogleMaps.h>
+
 #import "AppDelegate.h"
 
 #import <React/RCTBridge.h>
@@ -29,6 +32,8 @@ static void InitializeFlipper(UIApplication *application) {
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+  [GMSServices provideAPIKey:@"AIzaSyAjlQJn135oxYb71mus8YWzdRt44DMKExo"]; // add this line using the api key obtained from Google Consol
+  [FIRApp configure];
 #if defined(FB_SONARKIT_ENABLED) && __has_include(<FlipperKit/FlipperClient.h>)
   InitializeFlipper(application);
 #endif

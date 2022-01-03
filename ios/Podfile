@@ -9,7 +9,12 @@ podfile_properties = JSON.parse(File.read('./Podfile.properties.json')) rescue {
 
 target 'sktnew' do
   use_expo_modules!
+  # React Native Maps dependencies
+  rn_maps_path = '../node_modules/react-native-maps'
+  pod 'react-native-google-maps', :path => rn_maps_path
+  
   config = use_native_modules!
+  pod 'GoogleSignIn', '~> 6.0.2' # RNGoogleSignin requires GoogleSignIn >= 6.0.2
 
   use_react_native!(
     :path => config[:reactNativePath],
@@ -24,7 +29,9 @@ target 'sktnew' do
 
   post_install do |installer|
     react_native_post_install(installer)
-
+    installer.pods_project.build_configurations.each do |config|
+      config.build_settings["EXCLUDED_ARCHS[sdk=iphonesimulator*]"] = "arm64"
+    end
     # Workaround `Cycle inside FBReactNativeSpec` error for react-native 0.64
     # Reference: https://github.com/software-mansion/react-native-screens/issues/842#issuecomment-812543933
     installer.pods_project.targets.each do |target|

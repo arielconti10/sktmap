@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "1051242235544",
+    "project_id": "sktnew-777",
+    "storage_bucket": "sktnew-777.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1051242235544:android:ccfcb7daff244a0c67b2ed",
+        "android_client_info": {
+          "package_name": "com.sktnew"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1051242235544-918hghpp7ivfjt56edjl6agi1udagie3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.sktnew",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "1051242235544-j280tmak0hi3rlhfb1qsjdqpqe76o1p6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCi_OaBshA1RT3oI3lU0VSZ4CEzV4MHtzI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1051242235544-j280tmak0hi3rlhfb1qsjdqpqe76o1p6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
