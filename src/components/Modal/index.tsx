@@ -1,33 +1,46 @@
-import React, { useEffect, useRef } from 'react';
-import { View, Text, TouchableOpacity } from 'react-native';
-import { Modalize } from 'react-native-modalize';
+import { BottomSheetModal } from '@gorhom/bottom-sheet';
+import React, { forwardRef, Ref, useCallback, useMemo } from 'react';
+import { View, Text, StyleSheet } from 'react-native';
 
 interface ModalProps {
-  isOpen: boolean;
+  ref: React.RefObject<BottomSheetModal>;
+  data: any;
 }
 
-const Modal = ({isOpen}: ModalProps) => {
-  const modalizeRef = useRef<Modalize>(null);
-
-  const onOpen = () => {
-    modalizeRef.current?.open();
-  };
-
-  useEffect(() => {
-    if(isOpen) {
-      onOpen();
-    }
-  }, [isOpen])
+export const Modal = forwardRef((props: ModalProps, ref: Ref<BottomSheetModal>) => {
+  const snapPoints = useMemo(() => ['25%', '50%', '98%'], []);
+  
+  const handleSheetChanges = useCallback(() => (index: number) => {
+    console.log(index);
+  }, []);
 
   return (
     <>
-      <Modalize ref={modalizeRef}>
-        <Text>
-          ...your content
-        </Text>
-      </Modalize>
+      <BottomSheetModal
+        ref={ref}
+        index={0}
+        snapPoints={snapPoints}
+        onChange={handleSheetChanges}
+      >
+        <View style={styles.contentContainer}>
+          <Text>Awesome 🎉</Text>
+        </View>
+      </BottomSheetModal>
     </>
   );
-};
+});
 
-export default Modal
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    padding: 24,
+    justifyContent: 'center',
+    backgroundColor: 'grey',
+  },
+  contentContainer: {
+    flex: 1,
+    alignItems: 'center',
+  },
+});
+
