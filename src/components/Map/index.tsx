@@ -13,14 +13,15 @@ interface MapProps {
 }
 
 export default function Map({ spots }: MapProps) {
-  const currentSpot = useState<Spot>({} as Spot);
+  const [currentSpot, setCurrentSpot] = useState<Spot>({} as Spot);
   const mapRef = useRef<MapView>(null);
   
   // ref
   const bottomSheetModalRef = useRef<BottomSheetModal>(null);
 
   // callbacks
-  const handlePresentModalPress = useCallback(() => {
+  const handlePresentModalPress = useCallback((spot: Spot) => {
+    setCurrentSpot(spot)
     bottomSheetModalRef.current?.present();
   }, []);
   
@@ -39,7 +40,7 @@ export default function Map({ spots }: MapProps) {
       }} 
     >
       {spots.map((spot, index) => (
-        <Marker spot={spot} key={index} onPress={handlePresentModalPress} />
+        <Marker spot={spot} key={index} onPress={() => handlePresentModalPress(spot)} />
       ))}
 
       <Modal data={currentSpot} ref={bottomSheetModalRef} />

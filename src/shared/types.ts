@@ -1,4 +1,4 @@
-enum SpotType {
+export enum SpotType {
   street_spot = "Street Spot",
   skatepark = "Skate Park",
   park = "Park",
@@ -16,4 +16,6 @@ export interface Spot {
   name: string;
   description: string;
   type: keyof SpotType;
+  image: string;
+  obstacles: string[];
 }

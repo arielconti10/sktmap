@@ -2,7 +2,6 @@ import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { Spot } from '@src/shared/types';
 import React from 'react';
 import {Marker as Pin} from 'react-native-maps';
-// import { Container } from './styles';
 
 interface MarkerProps{
   spot: Spot
