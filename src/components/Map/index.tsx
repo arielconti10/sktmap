@@ -1,11 +1,11 @@
 import React, { useCallback, useMemo, useRef } from 'react';
 import { View, Dimensions, StyleSheet } from 'react-native';
 
-import MapView, { Marker, PROVIDER_GOOGLE } from 'react-native-maps';
-import { MaterialCommunityIcons } from '@expo/vector-icons';
+import MapView, { PROVIDER_GOOGLE } from 'react-native-maps';
 import { BottomSheetModal } from '@gorhom/bottom-sheet';
 
 import { Spot } from '@src/shared/types';
+import { Marker } from '@components/Marker';
 import { Text } from 'native-base';
 
 
@@ -29,7 +29,7 @@ export default function Map({ spots }: MapProps) {
   }, []);
 
   const handleSheetChanges = useCallback((index: number) => {
-    console.log('handleSheetChanges', index);
+
   }, []);
 
   
@@ -48,13 +48,7 @@ export default function Map({ spots }: MapProps) {
       }} 
     >
       {spots.map((spot, index) => (
-        <Marker
-          key={index}
-          coordinate={{ latitude : parseFloat(spot.latitude) , longitude : parseFloat(spot.longitude) }}
-          onPress={handlePresentModalPress}
-        >
-          <MaterialCommunityIcons name="skateboard" size={48} color="black" />
-        </Marker>
+        <Marker spot={spot} key={index} onPress={handlePresentModalPress} />
       ))}
 
       <BottomSheetModal

@@ -2,8 +2,8 @@ import React, { useState, useEffect } from "react";
 import { Alert } from 'react-native';
 import firestore from '@react-native-firebase/firestore'
 
-import Map from "../../components/Map";
-import { Spot } from "../../shared/types";
+import Map from "@components/Map";
+import { Spot } from "@src/shared/types";
 
 import { Container } from "./styles";
 
@@ -35,6 +35,5 @@ export function Home() {
     <Container>
       <Map spots={spots}/>
     </Container>
-
   );
 }

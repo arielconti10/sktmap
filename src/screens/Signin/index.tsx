@@ -1,9 +1,9 @@
 import React from 'react';
 import { Alert } from 'react-native';
 
-import { Button } from '../../components/Button';
+import { Button } from '@components/Button';
 
-import { useAuth } from '../../hooks/useAuth';
+import { useAuth } from '@hooks/useAuth';
 
 import { 
   Container, 

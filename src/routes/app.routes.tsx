@@ -2,7 +2,7 @@ import React from 'react';
 import { Feather } from '@expo/vector-icons';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
-import { Home } from '../screens/Home';
+import { Home } from '@screens/Home';
 
 const { Navigator, Screen } = createBottomTabNavigator();
 
