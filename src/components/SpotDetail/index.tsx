@@ -11,7 +11,7 @@ import {
   HStack,
   Heading,
 } from "native-base";
-import { Spot, SpotType } from "@src/shared/types";
+import { Spot, SpotType } from "../../shared/types";
 
 interface SpotDetailProps {
   spot: Spot;

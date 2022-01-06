@@ -15,6 +15,8 @@ import { GoogleSignin } from '@react-native-google-signin/google-signin';
 type User = {
   id: string;
   name: string;
+  email: string;
+  photo: string;
 }
 
 type AuthContextData = {

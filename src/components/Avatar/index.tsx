@@ -9,8 +9,9 @@ interface UserAvatarProps {
 export function UserAvatar ({name, image}: UserAvatarProps) {
   return (
     <Avatar
+      size="xl"
       bg="green.500"
-      source={image ? {uri: image} : undefined}
+      source={{uri: image}}
     >
       {name.charAt(0)}
     </Avatar>

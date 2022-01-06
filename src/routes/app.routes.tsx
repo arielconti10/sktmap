@@ -3,6 +3,7 @@ import { Feather } from '@expo/vector-icons';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 import { Home } from '@screens/Home';
+import { Profile } from '@screens/Profile';
 
 const { Navigator, Screen } = createBottomTabNavigator();
 
@@ -39,7 +40,7 @@ export function AppRoutes(){
 
       <Screen
         name="Profile"
-        component={Home}
+        component={Profile}
         options={{
           tabBarIcon: (({ size, color }) => (
             <Feather
