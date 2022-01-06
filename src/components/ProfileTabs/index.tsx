@@ -23,10 +23,9 @@ export function ProfileTabs() {
   const layout = useWindowDimensions();
 
   const [routes] = React.useState([
-    { key: "first", title: "Tab 1" },
-    { key: "second", title: "Tab 2" },
-    { key: "third", title: "Tab 3" },
-    { key: "fourth", title: "Tab 4" },
+    { key: "first", title: "Media" },
+    { key: "second", title: "Spots" },
+    { key: "third", title: "Checkins" },
   ]);
 
   const renderTabBar = (props: any) => {
@@ -39,6 +38,7 @@ export function ProfileTabs() {
 
           return (
             <Box
+              key={i}
               borderBottomWidth="3"
               borderColor={borderColor}
               flex={1}
@@ -60,7 +60,7 @@ export function ProfileTabs() {
   };
 
   return (
-    <View style={{ width: layout.width, padding: 30, flex: 1 }}>
+    <View style={{ width: layout.width, paddingHorizontal: 30, flex: 1 }}>
       <TabView
         navigationState={{ index, routes }}
         renderScene={renderScene}

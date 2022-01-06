@@ -5,6 +5,8 @@ import {
   Center,
   Pressable,
   View,
+  HStack,
+  Heading,
 } from "native-base";
 
 import { UserAvatar } from "@components/Avatar";
@@ -31,6 +33,23 @@ export function Profile() {
           </Text>
         </Center>
       )}
+
+      <HStack space={5} alignItems="center" marginY="6">
+        <Center>
+          <Text>Medias published</Text>
+          <Heading size="lg">10</Heading>
+        </Center>
+
+        <Center>
+          <Text>Published spots</Text>
+          <Heading size="lg">7</Heading>
+        </Center>
+
+        <Center>
+          <Text>Check-ins</Text>
+          <Heading size="lg">23</Heading>
+        </Center>
+      </HStack>
 
       <ProfileTabs />
     </ProfileContainer>
