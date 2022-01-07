@@ -12,11 +12,11 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import { GoogleSignin } from '@react-native-google-signin/google-signin';
 
 
-type User = {
+export type User = {
   id: string;
   name: string;
-  email: string;
-  photo: string;
+  email?: string;
+  photo?: string;
 }
 
 type AuthContextData = {
@@ -95,11 +95,12 @@ function AuthProvider({ children }: AuthProviderProps) {
       const userAuth = await auth().signInWithCredential(googleCredential);
       if(userAuth.user){
         const userInfo = userAuth.user;
+
         const userLogged = {
           id: userInfo.uid,
-          email: userInfo.email,
+          email: userInfo.email || '',
           name: userInfo.displayName as string,
-          photo: userInfo.photoURL
+          photo: userInfo.photoURL || ''
         };
   
         setUser(userLogged);
@@ -119,7 +120,6 @@ function AuthProvider({ children }: AuthProviderProps) {
 
     if (storedUser) {
       const userData = JSON.parse(storedUser) as User;
-      console.log(userData);
       setUser(userData);
     }
 
