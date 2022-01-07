@@ -2,8 +2,9 @@ import { TabView, SceneMap } from "react-native-tab-view";
 import { Box, Center, View } from "native-base";
 import { Animated, Pressable, useWindowDimensions } from "react-native";
 import React from "react";
+import MediaTab from "@screens/Profile/MediaTab";
 
-const FirstRoute = () => <Center flex={1}>This is Tab 1</Center>;
+const FirstRoute = () => <MediaTab />;
 
 const SecondRoute = () => <Center flex={1}>This is Tab 2</Center>;
 
@@ -44,6 +45,7 @@ export function ProfileTabs() {
               flex={1}
               alignItems="center"
               p="3"
+              mb="2"
             >
               <Pressable
                 onPress={() => {
